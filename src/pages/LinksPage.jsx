@@ -23,28 +23,29 @@ export default function LinksPage() {
                 </header>
 
                 {/* Links Container */}
+
+                {/* Link 2: Clinic / Treatment */}
+                <a href="/" className="link-card link-card-organic-secondary">
+                    <span className="link-badge link-badge-clinic">Acompanhamento Premium</span>
+                    <div className="link-card-content">
+                        <div className="link-text-block">
+                            <h3>Inicie seu Tratamento na Clínica</h3>
+                            <p>Acompanhamento médico-nutricional integrativo com a equipe Aliada.</p>
+                        </div>
+                        <WhatsappLogo className="link-card-icon" size={26} weight="bold" />
+                    </div>
+                </a>
+
                 <main className="links-list">
                     {/* Link 1: E-book (Featured / Primary) */}
                     <a href="/ebook" className="link-card link-card-primary link-card-organic-primary">
                         <span className="link-badge">E-book em Destaque</span>
                         <div className="link-card-content">
                             <div className="link-text-block">
-                                <h3>O Inimigo Invisível — E-book</h3>
-                                <p>Descubra como silenciar a inflamação e destravar a perda de peso hoje mesmo.</p>
+                                <h3>E-book: Obesidade Controlada</h3>
+                                <p>Um guia completo para nutricionistas e estudantes de nutrição sobre como tratar a obesidade.</p>
                             </div>
                             <BookOpen className="link-card-icon" size={26} weight="bold" />
-                        </div>
-                    </a>
-
-                    {/* Link 2: Clinic / Treatment */}
-                    <a href="/" className="link-card link-card-organic-secondary">
-                        <span className="link-badge link-badge-clinic">Acompanhamento Premium</span>
-                        <div className="link-card-content">
-                            <div className="link-text-block">
-                                <h3>Inicie seu Tratamento na Clínica</h3>
-                                <p>Acompanhamento médico-nutricional integrativo com a equipe Aliada.</p>
-                            </div>
-                            <WhatsappLogo className="link-card-icon" size={26} weight="bold" />
                         </div>
                     </a>
 
@@ -63,7 +64,7 @@ export default function LinksPage() {
                 {/* Footer */}
                 <footer className="links-footer" style={{ flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}>
                     <div style={{ display: 'flex', gap: '1.25rem' }}>
-                        <a href="https://instagram.com/nutri.leticiaboettcher" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <a href="https://instagram.com/nutriletiboettcher" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <InstagramLogo size={22} />
                         </a>
                         <a href="https://wa.me/5547996887437" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
