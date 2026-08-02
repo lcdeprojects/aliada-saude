@@ -18,7 +18,7 @@ export default function LinksPage() {
                     </span>
                     <h1 className="links-title">Leticia Boettcher</h1>
                     <p className="links-subtitle">
-                        Te ajudo a regular a sua fisiologia, combater a resistência à insulina e reconquistar sua disposição definitiva.
+                        Tratando obseidade com evidência e ética.
                     </p>
                 </header>
 
