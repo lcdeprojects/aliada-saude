@@ -23,20 +23,20 @@ export default function LinksPage() {
                 </header>
 
                 {/* Links Container */}
-
-                {/* Link 2: Clinic / Treatment */}
-                <a href="/" className="link-card link-card-organic-secondary">
-                    <span className="link-badge link-badge-clinic">Acompanhamento Premium</span>
-                    <div className="link-card-content">
-                        <div className="link-text-block">
-                            <h3>Inicie seu Tratamento na Clínica</h3>
-                            <p>Acompanhamento médico-nutricional integrativo com a equipe Aliada.</p>
-                        </div>
-                        <WhatsappLogo className="link-card-icon" size={26} weight="bold" />
-                    </div>
-                </a>
-
                 <main className="links-list">
+                    {/* Link 2: Clinic / Treatment */}
+                    <a href="/" className="link-card link-card-organic-secondary">
+                        <span className="link-badge link-badge-clinic">Acompanhamento Premium</span>
+                        <div className="link-card-content">
+                            <div className="link-text-block">
+                                <h3>Inicie seu Tratamento na Clínica</h3>
+                                <p>Acompanhamento médico-nutricional integrativo com a equipe Aliada.</p>
+                            </div>
+                            <WhatsappLogo className="link-card-icon" size={26} weight="bold" />
+                        </div>
+                    </a>
+
+
                     {/* Link 1: E-book (Featured / Primary) */}
                     <a href="/ebook" className="link-card link-card-primary link-card-organic-primary">
                         <span className="link-badge">E-book em Destaque</span>
