@@ -50,7 +50,7 @@ export default function LinksPage() {
                     </a>
 
                     {/* Link 3: Instagram */}
-                    <a href="https://instagram.com/nutri.leticiaboettcher" target="_blank" rel="noopener noreferrer" className="link-card">
+                    <a href="https://instagram.com/nutriletiboettcher" target="_blank" rel="noopener noreferrer" className="link-card">
                         <div className="link-card-content">
                             <div className="link-text-block">
                                 <h3>Instagram Oficial</h3>
