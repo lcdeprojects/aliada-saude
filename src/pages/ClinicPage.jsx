@@ -64,7 +64,7 @@ export default function ClinicPage() {
                                     Falar com Equipe de Agendamento
                                     <ArrowUpRight size={18} weight="bold" />
                                 </a>
-                                <a href="#filosofia" className="btn btn-clinic-secondary">A Filosofia do Método</a>
+                                <a href="#resultados" className="btn btn-clinic-secondary">Depoimentos</a>
                             </div>
                             <div className="hero-premium-trust">
                                 <span><VideoCamera size={18} /> 100% Online via Google Meet</span>
