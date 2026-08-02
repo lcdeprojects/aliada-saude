@@ -38,7 +38,7 @@ export default function LinksPage() {
 
 
                     {/* Link 1: E-book (Featured / Primary) */}
-                    <a href="/ebook" className="link-card link-card-primary link-card-organic-primary">
+                    <a href="https://pay.kiwify.com.br/0DcEfjt" className="link-card link-card-primary link-card-organic-primary">
                         <span className="link-badge">E-book em Destaque</span>
                         <div className="link-card-content">
                             <div className="link-text-block">
