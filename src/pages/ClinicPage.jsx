@@ -177,7 +177,7 @@ export default function ClinicPage() {
                                 </div>
                                 <div className="specialist-details">
                                     <span className="spec-role">Médica Clínica Integrativa</span>
-                                    <h3>Dra. Maria Eduarda B. Busko</h3>
+                                    <h3>Dra. Maria Eduarda Busko</h3>
                                     <span className="spec-crm">CRM-PR 56568</span>
                                     <p>Reconhecida pela abordagem humanizada no tratamento clínico da obesidade. Alia a medicina baseada em evidências a estratégias práticas de dosagens hormonais e controle do comportamento alimentar.</p>
                                 </div>
