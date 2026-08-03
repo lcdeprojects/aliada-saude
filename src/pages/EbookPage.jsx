@@ -1,8 +1,10 @@
 import { useState, useRef } from 'react';
 import { Sparkle, ShieldCheck, SealCheck, Clock, ArrowDown, PlayCircle, Lightbulb, ShoppingCartSimple, Info, Heartbeat, Key, ArrowsClockwise, Leaf } from '@phosphor-icons/react';
 import FaqAccordion from '../components/FaqAccordion';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function EbookPage() {
+    useScrollReveal();
     const [quizState, setQuizState] = useState('start'); // start | questions | loading | result
     const [currentStep, setCurrentStep] = useState(1);
     const [answers, setAnswers] = useState({});
@@ -122,7 +124,6 @@ export default function EbookPage() {
 
     return (
         <div className="ebook-page-body">
-            {/* Header */}
             <header className="main-header">
                 <div className="container header-container">
                     <a href="/" className="logo">
@@ -139,12 +140,11 @@ export default function EbookPage() {
             </header>
 
             <main>
-                {/* Hero Section */}
                 <section className="hero-section">
-                    <div className="container hero-container">
+                    <div className="container hero-container scroll-reveal">
                         <div className="hero-badge">
                             <Sparkle size={14} weight="fill" />
-                            <span>Desconto de Aniversário Ativo</span>
+                            <span>Desconto de Aniversário Ativo — R$ 19,90</span>
                         </div>
                         <h1 className="hero-title">
                             O seu cansaço constante e a dificuldade de emagrecer têm um <span className="highlight-serif">culpado silencioso.</span>
@@ -157,7 +157,7 @@ export default function EbookPage() {
                                 Fazer o Teste Metabólico (1 Min)
                                 <ArrowDown size={18} weight="bold" />
                             </a>
-                            <a href="https://pay.kiwify.com.br/placeholder" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">Comprar Manual Direto — R$ 19,90</a>
+                            <a href="https://pay.kiwify.com.br/0DcEfjt" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">Comprar Manual Direto — R$ 19,90</a>
                         </div>
                         <div className="hero-trust">
                             <span><ShieldCheck size={18} weight="fill" className="text-blue-rich" /> Chega de Efeito Sanfona</span>
@@ -167,12 +167,10 @@ export default function EbookPage() {
                     </div>
                 </section>
 
-                {/* Quiz Section */}
                 <section id="quiz-section" className="quiz-section">
-                    <div className="container quiz-centered-container" ref={quizCardRef}>
+                    <div className="container quiz-centered-container scroll-reveal reveal-delay-1" ref={quizCardRef}>
                         <div className="quiz-card">
                             
-                            {/* Screen 1: Start Screen */}
                             {quizState === 'start' && (
                                 <div className="quiz-screen-start active">
                                     <span className="eyebrow">Avaliação Metabólica</span>
@@ -189,7 +187,7 @@ export default function EbookPage() {
                                         
                                         <div className="direct-buy-link-box">
                                             <span>ou</span>
-                                            <a href="https://pay.kiwify.com.br/placeholder" target="_blank" rel="noopener noreferrer" className="direct-buy-link">
+                                            <a href="https://pay.kiwify.com.br/0DcEfjt" target="_blank" rel="noopener noreferrer" className="direct-buy-link">
                                                 Pular teste e comprar manual direto (R$ 19,90) →
                                             </a>
                                             <p className="direct-buy-hint">
@@ -201,7 +199,6 @@ export default function EbookPage() {
                                 </div>
                             )}
 
-                            {/* Screen 2: Questions */}
                             {quizState === 'questions' && (
                                 <div className="quiz-questions-wrapper">
                                     <div className="quiz-header">
@@ -221,21 +218,22 @@ export default function EbookPage() {
                                 </div>
                             )}
 
-                            {/* Screen 3: Loading */}
                             {quizState === 'loading' && (
-                                <div className="quiz-loading active">
+                                <div className="quiz-screen-loading active">
                                     <div className="spinner"></div>
-                                    <p>Analisando suas respostas metabólicas…</p>
+                                    <h3>Analisando seu perfil metabólico...</h3>
+                                    <p>Cruzando seus sintomas com a literatura científica de resistência à insulina.</p>
                                 </div>
                             )}
 
-                            {/* Screen 4: Results */}
                             {quizState === 'result' && (
-                                <div className="quiz-result active">
-                                    <div className="result-badge" style={{ backgroundColor: result.badgeBg, color: result.badgeColor }}>
-                                        {result.badge}
+                                <div className="quiz-screen-result active">
+                                    <div className="result-header">
+                                        <span className="result-badge" style={{ backgroundColor: result.badgeBg, color: result.badgeColor }}>
+                                            {result.badge}
+                                        </span>
+                                        <h2 className="result-title">{result.title}</h2>
                                     </div>
-                                    <h3 className="result-title">{result.title}</h3>
                                     <p className="result-description" dangerouslySetInnerHTML={{ __html: result.description }} />
                                     
                                     <div className="solution-box">
@@ -247,7 +245,6 @@ export default function EbookPage() {
                                             No manual prático <strong>"O Seu Inimigo Invisível"</strong>, eu explico passo a passo como desinflamar o seu organismo e fazer as pazes com a balança de maneira científica e sem sofrimento.
                                         </p>
                                         
-                                        {/* Offer Widget */}
                                         <div className="offer-widget">
                                             <div className="price-strike">De R$ 29,90</div>
                                             <div className="price-current">
@@ -255,7 +252,7 @@ export default function EbookPage() {
                                                 <span className="price-val">R$ 19,90</span>
                                             </div>
                                             <p className="offer-note">*Desconto especial ativo no mês de aniversário da nutri.</p>
-                                            <a href="https://pay.kiwify.com.br/placeholder" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-checkout pulse-effect">
+                                            <a href="https://pay.kiwify.com.br/0DcEfjt" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-checkout pulse-effect">
                                                 Quero Garantir Meu Manual
                                                 <ShoppingCartSimple size={18} weight="bold" />
                                             </a>
@@ -272,10 +269,9 @@ export default function EbookPage() {
                     </div>
                 </section>
 
-                {/* Empathetic Copy Section */}
                 <section id="sobre-o-livro" className="about-book-section">
                     <div className="container split-container">
-                        <div className="info-block">
+                        <div className="info-block scroll-reveal-left">
                             <span className="eyebrow">Você está lutando contra a biologia</span>
                             <h2 className="section-title">Por que fazer dieta e passar fome não funciona no seu corpo?</h2>
                             <div className="text-content">
@@ -293,7 +289,7 @@ export default function EbookPage() {
                                 </p>
                             </div>
                         </div>
-                        <div className="book-card-visual">
+                        <div className="book-card-visual scroll-reveal-right reveal-delay-1">
                             <div className="visual-inner">
                                 <div className="book-mockup">
                                     <span className="book-tag">Manual Prático</span>
@@ -310,29 +306,28 @@ export default function EbookPage() {
                     </div>
                 </section>
 
-                {/* What You Will Learn Section */}
                 <section className="modules-section">
                     <div className="container">
-                        <span className="eyebrow">O Conteúdo do Manual</span>
-                        <h2 className="section-title centered">O que você vai aprender no guia definitivo:</h2>
+                        <span className="eyebrow scroll-reveal">O Conteúdo do Manual</span>
+                        <h2 className="section-title centered scroll-reveal">O que você vai aprender no guia definitivo:</h2>
                         
                         <div className="modules-grid">
-                            <div className="module-card">
+                            <div className="module-card scroll-reveal reveal-delay-1">
                                 <div className="module-icon"><Heartbeat size={32} weight="fill" /></div>
                                 <h3 className="module-title">1. A Verdadeira Face da Obesidade</h3>
                                 <p className="module-desc">Como o excesso de gordura atua como um órgão inflamatório e por que emagrecer não é apenas força de vontade.</p>
                             </div>
-                            <div className="module-card">
+                            <div className="module-card scroll-reveal reveal-delay-2">
                                 <div className="module-icon"><Key size={32} weight="fill" /></div>
                                 <h3 className="module-title">2. O Inimigo Silencioso</h3>
                                 <p className="module-desc">O funcionamento da insulina no seu corpo e os exames metabólicos que você deve investigar imediatamente.</p>
                             </div>
-                            <div className="module-card">
+                            <div className="module-card scroll-reveal reveal-delay-3">
                                 <div className="module-icon"><ArrowsClockwise size={32} weight="fill" /></div>
                                 <h3 className="module-title">3. O Ciclo Vicioso da Fome</h3>
                                 <p className="module-desc">A diferença entre fome física, fome emocional e a temida fome hormonal que altera a sua saciedade.</p>
                             </div>
-                            <div className="module-card">
+                            <div className="module-card scroll-reveal reveal-delay-4">
                                 <div className="module-icon"><Leaf size={32} weight="fill" /></div>
                                 <h3 className="module-title">4. Alimentos que Ajudam ou Sabotam</h3>
                                 <p className="module-desc">O segredo das fibras, gorduras boas e proteínas magras para alimentar as bactérias benéficas do seu intestino (microbiota).</p>
@@ -341,10 +336,9 @@ export default function EbookPage() {
                     </div>
                 </section>
 
-                {/* About Leticia Section */}
                 <section id="sobre-a-autora" className="author-section">
                     <div className="container split-container reverse">
-                        <div className="info-block">
+                        <div className="info-block scroll-reveal-left">
                             <span className="eyebrow">Sua Acompanhante nessa Jornada</span>
                             <h2 className="section-title">Quem é Nutri Leti Boettcher?</h2>
                             <div className="text-content">
@@ -369,7 +363,7 @@ export default function EbookPage() {
                                 </div>
                             </div>
                         </div>
-                        <div className="author-visual">
+                        <div className="author-visual scroll-reveal-right reveal-delay-1">
                             <div className="profile-photo-wrapper">
                                 <img src="/leticia.jpeg" alt="Nutri Leti Boettcher" className="profile-photo" width="380" height="380" loading="lazy" />
                             </div>
@@ -377,9 +371,8 @@ export default function EbookPage() {
                     </div>
                 </section>
 
-                {/* Direct Offer Call To Action */}
                 <section className="direct-offer-section">
-                    <div className="container offer-container-box">
+                    <div className="container offer-container-box scroll-reveal">
                         <span className="promo-pill">Oferta de Aniversário da Nutri</span>
                         <h2 className="offer-title">Transforme sua saúde metabólica por menos do que o valor de um café.</h2>
                         <p className="offer-subtitle">Adquira o e-book com o desconto especial de aniversário hoje e comece a combater a resistência à insulina imediatamente.</p>
@@ -390,7 +383,7 @@ export default function EbookPage() {
                             <div className="installments">Pago uma única vez</div>
                         </div>
 
-                        <a href="https://pay.kiwify.com.br/placeholder" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-large pulse-effect">
+                        <a href="https://pay.kiwify.com.br/0DcEfjt" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-large pulse-effect">
                             Adquirir Manual por R$ 19,90
                             <ShoppingCartSimple size={18} weight="bold" />
                         </a>
@@ -403,18 +396,18 @@ export default function EbookPage() {
                     </div>
                 </section>
 
-                {/* FAQ Section */}
                 <section id="faq" className="faq-section">
-                    <div className="container faq-container">
+                    <div className="container faq-container scroll-reveal">
                         <span className="eyebrow">Dúvidas Frequentes</span>
                         <h2 className="section-title centered">Perguntas Respondidas</h2>
                         
-                        <FaqAccordion items={faqItems} />
+                        <div className="scroll-reveal reveal-delay-1">
+                            <FaqAccordion items={faqItems} />
+                        </div>
                     </div>
                 </section>
             </main>
 
-            {/* Footer */}
             <footer className="main-footer">
                 <div className="container footer-grid">
                     <div className="footer-brand">

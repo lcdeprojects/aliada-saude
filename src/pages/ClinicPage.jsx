@@ -1,7 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, Navigation } from 'swiper/modules';
-import { ArrowUpRight, VideoCamera, ShieldCheck, CaretLeft, CaretRight } from '@phosphor-icons/react';
+import { ArrowUpRight, VideoCamera, ShieldCheck, CaretLeft, CaretRight, Sparkle } from '@phosphor-icons/react';
 import FaqAccordion from '../components/FaqAccordion';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -9,6 +10,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 export default function ClinicPage() {
+    useScrollReveal();
+
     const faqItems = [
         {
             question: "Como funciona a consulta médica e nutricional 100% online?",
@@ -51,8 +54,11 @@ export default function ClinicPage() {
                 {/* Hero Section */}
                 <section className="hero-premium-section">
                     <div className="container hero-premium-grid">
-                        <div className="hero-premium-content">
-                            <span className="eyebrow-premium">Acompanhamento Integrado e Exclusivo</span>
+                        <div className="hero-premium-content scroll-reveal-left">
+                            <span className="eyebrow-premium" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                                <span className="pulse-dot-live"></span>
+                                Acompanhamento Integrado e Exclusivo
+                            </span>
                             <h1 className="hero-premium-title">
                                 Tratar a obesidade não é sobre culpa. É sobre regular a sua <span className="highlight-serif">fisiologia.</span>
                             </h1>
@@ -71,19 +77,40 @@ export default function ClinicPage() {
                                 <span><ShieldCheck size={18} /> Suporte Médico & Nutricional Direto</span>
                             </div>
                         </div>
+
+                        {/* Hero Right Visual Column */}
+                        <div className="hero-visual-card-wrapper scroll-reveal-right reveal-delay-2">
+                            <div className="hero-visual-card">
+                                <img src="/leticia-maria.jpeg" alt="Dra. Leticia Boettcher e Dra. Maria Eduarda Busko" className="hero-visual-img" />
+                                <div className="hero-glass-badge hero-glass-badge-top">
+                                    <Sparkle size={18} weight="fill" className="badge-sparkle-icon" />
+                                    <div>
+                                        <strong>Equipe Integrada</strong>
+                                        <span>Medicina + Nutrição</span>
+                                    </div>
+                                </div>
+                                <div className="hero-glass-badge hero-glass-badge-bottom">
+                                    <ShieldCheck size={18} weight="fill" className="badge-shield-icon" />
+                                    <div>
+                                        <strong>Conduta Científica</strong>
+                                        <span>Sem efeito sanfona</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
                 {/* Real Results Section */}
                 <section id="resultados" className="results-premium-section">
                     <div className="container">
-                        <div className="section-header-centered">
+                        <div className="section-header-centered scroll-reveal">
                             <span className="eyebrow-premium">Resultados de Sucesso</span>
                             <h2 className="section-title-premium">Depoimentos e Casos Clínicos Reais</h2>
                         </div>
 
                         {/* Main Story */}
-                        <div className="story-highlight-box">
+                        <div className="story-highlight-box scroll-reveal reveal-delay-1">
                             <div className="story-content">
                                 <h3 className="story-title">"Eu entendi que o meu processo era diferente..."</h3>
                                 <blockquote className="story-quote">
@@ -99,7 +126,7 @@ export default function ClinicPage() {
                         </div>
 
                         {/* Testimonials Swiper Carousel */}
-                        <div className="screenshots-grid-container">
+                        <div className="screenshots-grid-container scroll-reveal reveal-delay-2">
                             <div className="screenshots-header">
                                 <p className="screenshots-intro">Confira relatos de pacientes reais que estão vivenciando a transformação metabólica da Aliada (Arraste para o lado):</p>
                             </div>
@@ -153,13 +180,13 @@ export default function ClinicPage() {
                 {/* Specialists Section */}
                 <section id="especialistas" className="specialists-section">
                     <div className="container">
-                        <div className="section-header-centered">
+                        <div className="section-header-centered scroll-reveal">
                             <span className="eyebrow-premium">Corpo Clínico</span>
                             <h2 className="section-title-premium">As Suas Aliadas Nessa Jornada</h2>
                         </div>
 
                         <div className="specialists-grid">
-                            <div className="specialist-editorial-card">
+                            <div className="specialist-editorial-card scroll-reveal-left reveal-delay-1">
                                 <div className="specialist-photo-container">
                                     <img src="/leticia.jpeg" alt="Leticia Boettcher - Nutricionista" className="specialist-img-portrait" />
                                 </div>
@@ -171,7 +198,7 @@ export default function ClinicPage() {
                                 </div>
                             </div>
 
-                            <div className="specialist-editorial-card">
+                            <div className="specialist-editorial-card scroll-reveal-right reveal-delay-2">
                                 <div className="specialist-photo-container">
                                     <img src="/maria.jpeg" alt="Dra. Maria Eduarda Busko - Médica" className="specialist-img-portrait" />
                                 </div>
@@ -189,12 +216,14 @@ export default function ClinicPage() {
                 {/* FAQ Section */}
                 <section id="faq" className="faq-premium-section">
                     <div className="container faq-premium-container">
-                        <div className="section-header-centered">
+                        <div className="section-header-centered scroll-reveal">
                             <span className="eyebrow-premium">Dúvidas Frequentes</span>
                             <h2 className="section-title-premium">Perguntas Respondidas</h2>
                         </div>
 
-                        <FaqAccordion items={faqItems} />
+                        <div className="scroll-reveal reveal-delay-1">
+                            <FaqAccordion items={faqItems} />
+                        </div>
                     </div>
                 </section>
             </main>
