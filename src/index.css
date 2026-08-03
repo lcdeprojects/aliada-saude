@@ -2647,9 +2647,19 @@ h1, h2, h3, h4 {
     }
 }
 
-/* ==========================================================================
-   Scroll Reveal & Dynamic Micro-Interactions
-   ========================================================================== */
+/* Hero & Mobile Scroll Safety Fallback */
+.hero-premium-section .scroll-reveal-left,
+.hero-premium-section .scroll-reveal-right,
+.hero-section .scroll-reveal {
+    animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes heroFadeIn {
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
 
 .scroll-reveal {
     opacity: 0;
