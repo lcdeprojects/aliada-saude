@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, Navigation } from 'swiper/modules';
-import { ArrowUpRight, VideoCamera, ShieldCheck, CaretLeft, CaretRight, Sparkle } from '@phosphor-icons/react';
+import { ArrowUpRight, VideoCamera, ShieldCheck, CaretLeft, CaretRight } from '@phosphor-icons/react';
 import FaqAccordion from '../components/FaqAccordion';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
@@ -78,22 +78,23 @@ export default function ClinicPage() {
                             </div>
                         </div>
 
-                        {/* Hero Right Visual Column */}
-                        <div className="hero-visual-card-wrapper scroll-reveal-right reveal-delay-2">
-                            <div className="hero-visual-card">
-                                <img src="/leticia-maria.jpeg" alt="Dra. Leticia Boettcher e Dra. Maria Eduarda Busko" className="hero-visual-img" />
-                                <div className="hero-glass-badge hero-glass-badge-top">
-                                    <Sparkle size={18} weight="fill" className="badge-sparkle-icon" />
-                                    <div>
-                                        <strong>Equipe Integrada</strong>
-                                        <span>Medicina + Nutrição</span>
-                                    </div>
+                        {/* Hero Right Visual Column - Contextualized Team Card */}
+                        <div className="hero-team-card-wrapper scroll-reveal-right reveal-delay-2">
+                            <div className="hero-team-card">
+                                <div className="hero-team-card-header">
+                                    <span className="hero-team-tag">Corpo Clínico Integrado</span>
+                                    <h3 className="hero-team-names">Leticia Boettcher & Dra. Maria Eduarda</h3>
                                 </div>
-                                <div className="hero-glass-badge hero-glass-badge-bottom">
-                                    <ShieldCheck size={18} weight="fill" className="badge-shield-icon" />
-                                    <div>
-                                        <strong>Conduta Científica</strong>
-                                        <span>Sem efeito sanfona</span>
+                                <div className="hero-team-photo-container">
+                                    <img src="/leticia-maria.jpeg" alt="Leticia Boettcher e Dra. Maria Eduarda Busko" className="hero-team-photo" />
+                                </div>
+                                <div className="hero-team-card-body">
+                                    <p className="hero-team-desc">
+                                        Sua saúde tratada por nutricionista e médica juntas em uma conduta integrada para regular seus hormônios e acelerar o emagrecimento.
+                                    </p>
+                                    <div className="hero-team-features">
+                                        <span><ShieldCheck size={16} /> Medicina & Nutrição</span>
+                                        <span><VideoCamera size={16} /> 100% Online</span>
                                     </div>
                                 </div>
                             </div>

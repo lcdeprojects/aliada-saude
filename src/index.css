@@ -200,25 +200,62 @@
     align-items: center;
 }
 
-/* Hero Visual Card (Clinic Page) */
-.hero-visual-card-wrapper {
+/* Hero Team Card (Contextualized Specialist Showcase) */
+.hero-team-card-wrapper {
     position: relative;
     width: 100%;
-    max-width: 380px;
+    max-width: 420px;
     margin: 0 auto;
 }
 
-.hero-visual-card {
-    position: relative;
+.hero-team-card {
+    background: #FFFFFF;
     border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 16px 40px rgba(22, 29, 38, 0.08);
-    border: 1px solid rgba(22, 29, 38, 0.06);
-    aspect-ratio: 9 / 13;
-    background-color: var(--color-bg-secondary);
+    padding: 1.5rem;
+    border: 1px solid rgba(22, 29, 38, 0.08);
+    box-shadow: 0 20px 48px rgba(22, 29, 38, 0.06);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.hero-visual-img {
+.hero-team-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 56px rgba(22, 29, 38, 0.09);
+}
+
+.hero-team-card-header {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.hero-team-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-blue-cta);
+    display: inline-block;
+    margin-bottom: 0.35rem;
+}
+
+.hero-team-names {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    color: var(--color-blue-rich);
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.hero-team-photo-container {
+    width: 100%;
+    aspect-ratio: 4 / 4.2;
+    border-radius: 18px;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+    background-color: var(--color-bg-secondary);
+    border: 1px solid rgba(22, 29, 38, 0.05);
+}
+
+.hero-team-photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -226,45 +263,35 @@
     display: block;
 }
 
-.hero-glass-badge {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem 1.15rem;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(16px);
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    box-shadow: 0 8px 24px rgba(22, 29, 38, 0.08);
-    z-index: 10;
+.hero-team-card-body {
+    text-align: left;
 }
 
-.hero-glass-badge-top {
-    top: 1.25rem;
-    right: 1rem;
-}
-
-.hero-glass-badge-bottom {
-    bottom: 1.25rem;
-    left: 1rem;
-}
-
-.hero-glass-badge strong {
-    display: block;
-    font-size: 0.85rem;
-    color: var(--color-blue-rich);
-    font-weight: 600;
-}
-
-.hero-glass-badge span {
-    display: block;
-    font-size: 0.75rem;
+.hero-team-desc {
+    font-size: 0.88rem;
     color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin-bottom: 1rem;
 }
 
-.badge-sparkle-icon { color: var(--color-promo-amber); }
-.badge-shield-icon { color: var(--color-blue-cta); }
+.hero-team-features {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--color-blue-rich);
+    flex-wrap: wrap;
+}
+
+.hero-team-features span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background-color: var(--color-bg-secondary);
+    padding: 0.4rem 0.75rem;
+    border-radius: 100px;
+    border: 1px solid rgba(22, 29, 38, 0.04);
+}
 
 .eyebrow-premium {
     font-family: var(--font-sans);
