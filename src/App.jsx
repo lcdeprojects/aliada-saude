@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import ClinicPage from './pages/ClinicPage';
 import EbookPage from './pages/EbookPage';
 import LinksPage from './pages/LinksPage';
+import QuizPage from './pages/QuizPage';
 
 function App() {
     const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -59,6 +60,9 @@ function App() {
     }
     if (currentPath === '/ebook') {
         return <EbookPage navigate={navigate} />;
+    }
+    if (currentPath === '/quiz') {
+        return <QuizPage navigate={navigate} />;
     }
     return <ClinicPage navigate={navigate} />;
 }

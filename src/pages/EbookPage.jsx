@@ -133,6 +133,7 @@ export default function EbookPage() {
                     <nav className="desktop-nav">
                         <a href="#sobre-o-livro">O Manual</a>
                         <a href="#sobre-a-autora">A Leti</a>
+                        <a href="/quiz">Quiz Metabólico</a>
                         <a href="#faq">Perguntas Frequentes</a>
                     </nav>
                     <a href="#quiz-section" className="btn btn-secondary-outline nav-cta">Fazer o Teste</a>
