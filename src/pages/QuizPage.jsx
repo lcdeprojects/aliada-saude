@@ -338,7 +338,7 @@ export default function QuizPage() {
 
                     {/* Submitting Loading State */}
                     {isSubmitting && (
-                        <div className="quiz-loading-card scroll-reveal">
+                        <div className="quiz-loading-card reveal-visible">
                             <div className="spinner-clinic"></div>
                             <h2>Analisando seu Perfil Metabólico...</h2>
                             <p>Cruzando suas respostas com a conduta científica de reversão da resistência à insulina da Aliada Medicina & Saúde.</p>
@@ -347,7 +347,7 @@ export default function QuizPage() {
 
                     {/* Result & Coupon Screen */}
                     {isCompleted && (
-                        <div className="quiz-result-card scroll-reveal">
+                        <div className="quiz-result-card reveal-visible">
                             <div className="result-badge-pill">
                                 <Sparkle size={18} weight="fill" className="text-amber" />
                                 <span>Quiz Concluído — Diagnóstico Mapeado</span>
