@@ -43,7 +43,6 @@ export default function ClinicPage() {
                     <nav className="clinic-nav">
                         <a href="#resultados">Depoimentos</a>
                         <a href="#especialistas">As Especialistas</a>
-                        <a href="/quiz">Quiz Metabólico</a>
                     </nav>
                     <a href="https://wa.me/5547996887437?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20a%20disponibilidade%20de%20vagas%20e%20saber%20mais%20sobre%20o%20Acompanhamento%20Aliada." target="_blank" rel="noopener noreferrer" className="btn btn-clinic-primary nav-cta pulse-effect">
                         Agendar Consulta
